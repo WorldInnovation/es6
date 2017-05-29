@@ -1,13 +1,13 @@
-'use_strict';
+
 //const NODE_ENV = process.env.NODE_ENV || 'development';
 
 const webpack = require('webpack');
-var path = require("path");
+const path = require("path");
 module.exports = {
     entry: './home',
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, "dist"),
+        filename: './dist/bundle.js',
+        //path: path.resolve(__dirname, "dist"),
         library: 'home',
         publicPath: '/public/'
     },
