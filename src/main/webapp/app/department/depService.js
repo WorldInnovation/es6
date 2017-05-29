@@ -10,12 +10,12 @@ export default class DepService {
     };
 
     delete(depID) {
-        let deleteDepartment = $.ajax({
-            url: '/delete',
+        let deleteDep = $.ajax({
+            url: '/deleteDep',
             data: {depID: depID},
             type: 'POST'
         });
-        return deleteDepartment;
+        return deleteDep;
     };
 
     editDepartment(depID) {

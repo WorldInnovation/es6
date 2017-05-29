@@ -16,18 +16,18 @@ export default class DepView{
     let body = $('#content');
     body.text('');
     let table = $('<table>');
-    table.append($('<td>').append($('<b>').text('Department')));
-    table.append($('<td>').append($('<b>').text('Select')));
-    table.append($('<td>').append($('<b>').text('Edit')));
-    table.append($('<td>').append($('<b>').text('Delete')));
+    table.append($('<th>').append($('<b>').text('Department')));
+    table.append($('<th>').append($('<b>').text('Select')));
+    table.append($('<th>').append($('<b>').text('Edit')));
+    table.append($('<th>').append($('<b>').text('Delete')));
 
     for (let i = 0; i < response.length; i++) {
     table.append(
         $('<tr>')
-.append($('<td>').text(response[i].name))
-.append($('<td>').append($('<button class="listener" value="deleteDepartment" name="' + response[i].id + '">Delete</button>')))
-.append($('<td>').append($('<button class="listener" value="updateDepartment" name="' + response[i].id + '" >Update</button>')))
-.append($('<td>').append($('<button class="listener" value="showAllEmployees" name="' + response[i].id + '">Employees</button>')))
+    .append($('<td>').text(response[i].name))
+    .append($('<td>').append($('<button class="listener" value="showAllEmployees" name="' + response[i].id + '">Select</button>')))
+    .append($('<td>').append($('<button class="listener" value="editDepartment" name="' + response[i].id + '" >Edit</button>')))
+    .append($('<td>').append($('<button class="listener" value="deleteDep" name="' + response[i].id + '">Delete</button>')))
 );
 }
 table.append($('<tr>')
