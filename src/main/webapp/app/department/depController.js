@@ -11,7 +11,7 @@ export default class DepController{
         this.depView = new DepView();
         this.depService = new DepService();
     }
-    getAllDep(){console.log('getAll!');
+    getAllDep(){
             this.depService.getAll()
                 .then( (response) => {
                     this.depView.displayDepartments(response);
