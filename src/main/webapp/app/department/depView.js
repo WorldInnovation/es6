@@ -16,7 +16,11 @@ export default class DepView{
     let body = $('#content');
     body.text('');
     let table = $('<table>');
-    table.append($('<tr>').append($('<td>').append($('<b>').text('Department Name'))));
+    table.append($('<td>').append($('<b>').text('Department')));
+    table.append($('<td>').append($('<b>').text('Select')));
+    table.append($('<td>').append($('<b>').text('Edit')));
+    table.append($('<td>').append($('<b>').text('Delete')));
+
     for (let i = 0; i < response.length; i++) {
     table.append(
         $('<tr>')

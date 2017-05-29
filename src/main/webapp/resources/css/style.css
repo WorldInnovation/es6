@@ -43,6 +43,10 @@ form{
     background: #ff6600;
 }
 
+.button:hover{
+    background: #ff6600;
+}
+
 a.btn{
     color: #fff; /* цвет текста */
     text-decoration: none; /* убирать подчёркивание у ссылок */
