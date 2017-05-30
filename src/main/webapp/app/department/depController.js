@@ -33,9 +33,10 @@ export default class DepController{
             });
     };
 
-    depSave() {
-        let departmentId = event.target.id;
-        this.depService.add(departmentId)
+    mySave() {
+        let id = event.target.name;
+        let name = event.target.id;
+        this.depService.saveDepartment(id,name)
             .then((response) => {
                 this.depView.displayDepartments(response);
             });

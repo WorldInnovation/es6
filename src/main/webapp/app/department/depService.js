@@ -12,7 +12,7 @@ export default class DepService {
     deleteDep() {
         let deleteDep = $.ajax({
             url: '/deleteDep',
-            data: {depID: event.id},
+            data: {depID: event.target.name},
             type: 'POST'
         });
         return deleteDep;
@@ -21,8 +21,8 @@ export default class DepService {
     editDep() {
         let editDep = $.ajax({
             url: '/editDepartment',
-            dataType: 'json',
-            data: {depID: 79},//event.target.name
+            //dataType: 'json',
+            data: {depID: event.target.name},//
             type: 'get'
         });
         return editDep;
@@ -31,15 +31,31 @@ export default class DepService {
      type: "GET",
      dataType: 'json',
      data: {depID: depID},*/
+    saveDepartment(id, name) {
+        let saveDepartment = $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify({
+                id: id,
+                name: name
+            }),
+            url: '/depSave',
+            type: "POST"
+        });
+        return saveDepartment;
+    };
 
-    depSave(depID, name) {
+/*    depSave() {
         let depSave = $.ajax({
             url: '/depSave',
-            data: {depID: depID, name: name},
+            dataType: 'json',
+            data: {depID: event.target.id, name: event.target.name},
             type: 'POST'
         });
         return depSave;
-    }
+    }*/
 
 
 }
