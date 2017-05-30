@@ -18,7 +18,7 @@ export default class DepService {
         return deleteDep;
     };
 
-    editDepartment(event) {
+    editDep() {
         let editDepartment = $.ajax({
             url: '/editDepartment',
             data: {depID: event.id},

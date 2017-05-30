@@ -22,7 +22,7 @@ export default class MainController {
         $("#content").on("click", ".listener", () => {
             let clickEvent = event.target.value;
             console.log(clickEvent);
-            this.map.get(clickEvent);
+            this.map.get(clickEvent)(event);
         });
 
     }

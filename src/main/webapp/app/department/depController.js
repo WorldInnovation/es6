@@ -17,23 +17,23 @@ export default class DepController{
                     this.depView.displayDepartments(response);
                 });
     };
-    deleteDep(event) {
-        let id = event.target.id;
+    deleteDep() {
+        let id = event.target.name;
         this.depService.deleteDep(id)
             .then((response) => {
                 this.depView.displayDepartments(response);
             });
     };
 
-    editDepartment(event) {
-        let id = event.target.id;
-        this.depService.update(id)
+    editDepartment() {
+        let id = event.target.name;
+        this.depService.editDep(id)
             .then((response) => {
-                this.depView.displayDepartmentForm(response);
+                this.depView.displayDepForm(response);
             });
     };
 
-    depSave(event) {
+    depSave() {
         let departmentId = event.target.id;
         this.depService.add(departmentId)
             .then((response) => {
