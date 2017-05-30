@@ -8,9 +8,9 @@ export default class MainController {
         this.depController = new DepController();
         this.map = new Map();
         this.map.set('deps', () => this.depController.getAllDep());
-        this.map.set('delete', () => this.depController.delete(event));
-        this.map.set('editDepartment', () => this.depController.editDepartment(event));
-        this.map.set('depSave', () => this.depController.depSave(event));
+        this.map.set('delete', () => this.depController.delete());
+        this.map.set('editDepartment', () => this.depController.editDepartment());
+        this.map.set('depSave', () => this.depController.depSave());
 
         //this.empController = new EmpController();
 
@@ -22,23 +22,8 @@ export default class MainController {
         $("#content").on("click", ".listener", () => {
             let clickEvent = event.target.value;
             console.log(clickEvent);
-            if (clickEvent === "employeesList") this.map.get('employeesList')(event);
-            if (clickEvent === "editDepartment") this.map.get('editDepartment')(event);//editDepartment(depID);
-            if (clickEvent === "deleteDep") this.map.get('delete')(event);
+            this.map.get(clickEvent);
         });
-
-/*        $("#content").on("click", "#depTable td", () => {
-           /!* let clickEvent = event.target.value;
-            console.log(clickEvent);*!/
-
-            let clicker = td.elem.getAttribute('data-about');
-            console.log(clicker);
-
-             if ($(this).attr('id') === "tableSelect") changeState('empList');
-             if ($(this).attr('id') === "tableEdit") this.map.get('editDepartment')(event);//editDepartment(depID);
-             if ($(this).attr('id') === "tableDelete") this.map.get('delete')(event);
-
-        });*/
 
     }
 

@@ -9,7 +9,7 @@ export default class DepService {
         return departmetList;
     };
 
-    delete(event) {
+    deleteDep() {
         let deleteDep = $.ajax({
             url: '/deleteDep',
             data: {depID: event.id},

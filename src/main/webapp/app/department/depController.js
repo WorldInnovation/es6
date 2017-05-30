@@ -19,7 +19,7 @@ export default class DepController{
     };
     deleteDep(event) {
         let id = event.target.id;
-        this.depService.delete(id)
+        this.depService.deleteDep(id)
             .then((response) => {
                 this.depView.displayDepartments(response);
             });
