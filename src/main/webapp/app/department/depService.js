@@ -33,14 +33,15 @@ export default class DepService {
      data: {depID: depID},*/
     saveDepartment(id, name) {
         let saveDepartment = $.ajax({
-            headers: {
+           /* headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
-            },
-            data: JSON.stringify({
+            },*/
+            data: {depID: id, name: name},
+            /*data: JSON.stringify({
                 id: id,
                 name: name
-            }),
+            }),*/
             url: '/depSave',
             type: "POST"
         });
