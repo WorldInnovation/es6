@@ -6,7 +6,7 @@ const path = require("path");
 module.exports = {
     entry: './home',
     output: {
-        filename: './dist/bundle.js',
+        filename: '../resources/dist/bundle.js',
         //path: path.resolve(__dirname, "dist"),
         library: 'home',
         publicPath: '/public/'
@@ -18,7 +18,7 @@ module.exports = {
         aggregateTimeout: 100
     },
 
-    devtool: 'source-map',//NODE_ENV == 'development' ? 'source-map' : null
+    devtool: 'source-map',
 
     module: {
         rules: [

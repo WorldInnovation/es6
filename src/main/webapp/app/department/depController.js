@@ -18,7 +18,7 @@ export default class DepController{
                 });
     };
     deleteDep(event) {
-        let id = event.target.name;
+        let id = event.target.id;
         this.depService.delete(id)
             .then((response) => {
                 this.depView.displayDepartments(response);
@@ -26,7 +26,7 @@ export default class DepController{
     };
 
     editDepartment(event) {
-        let id = event.target.name;
+        let id = event.target.id;
         this.depService.update(id)
             .then((response) => {
                 this.depView.displayDepartmentForm(response);
@@ -34,7 +34,7 @@ export default class DepController{
     };
 
     depSave(event) {
-        let departmentId = event.target.name;
+        let departmentId = event.target.id;
         this.depService.add(departmentId)
             .then((response) => {
                 this.depView.displayDepartments(response);

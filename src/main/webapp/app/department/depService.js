@@ -9,19 +9,19 @@ export default class DepService {
         return departmetList;
     };
 
-    delete(depID) {
+    delete(event) {
         let deleteDep = $.ajax({
             url: '/deleteDep',
-            data: {depID: depID},
+            data: {depID: event.id},
             type: 'POST'
         });
         return deleteDep;
     };
 
-    editDepartment(depID) {
+    editDepartment(event) {
         let editDepartment = $.ajax({
             url: '/editDepartment',
-            data: {depID: depID},
+            data: {depID: event.id},
             type: 'POST'
         });
         return editDepartment;

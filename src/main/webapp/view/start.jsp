@@ -9,6 +9,7 @@
 
 <html>
 <head>
+    <link rel="shortcut icon" href="">
     <title> Departments</title>
 </head>
 
