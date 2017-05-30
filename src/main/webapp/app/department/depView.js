@@ -53,7 +53,7 @@ export default class DepView {
                         )
                         .append($('<tr>')
                             .append($('<td>')
-                                .append($('<input  type="submit" class="listener" id="depSave" value="depSave">Save</input>'))
+                                .append($('<button   class="listener" value="depSave" id="depSave" >Save</button>'))
 
                             )
                         )
