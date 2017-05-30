@@ -34,8 +34,8 @@ export default class DepController{
     };
 
     mySave() {
-        let id = event.target.name;
-        let name = event.target.id;
+        let id = $('#id').val();;
+        let name =  $('#name').val();
         this.depService.saveDepartment(id,name)
             .then((response) => {
                 this.depView.displayDepartments(response);

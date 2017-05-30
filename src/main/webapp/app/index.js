@@ -21,6 +21,10 @@ export default class MainController {
     init() {
         $("#content").on("click", ".listener", () => {
             let clickEvent = event.target.value;
+            if("depSave" == clickEvent){
+                event.target.id;
+                event.target.name;
+            }
             console.log(clickEvent);
             this.map.get(clickEvent)(event);
         });

@@ -37,10 +37,9 @@ export default class DepView {
     };
 
     displayDepForm(response) {
-        $("#content").empty();
 
         let body = $('#content');
-        body.text('');
+        body.empty();
         body.append(
             $('<form id="departmentForm" onsubmit = "return false">')
                 .append(
