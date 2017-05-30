@@ -19,13 +19,18 @@ export default class DepService {
     };
 
     editDep() {
-        let editDepartment = $.ajax({
+        let editDep = $.ajax({
             url: '/editDepartment',
-            data: {depID: event.id},
-            type: 'POST'
+            dataType: 'json',
+            data: {depID: 79},//event.target.name
+            type: 'get'
         });
-        return editDepartment;
+        return editDep;
     }
+    /*url: "/editDepartment",
+     type: "GET",
+     dataType: 'json',
+     data: {depID: depID},*/
 
     depSave(depID, name) {
         let depSave = $.ajax({
