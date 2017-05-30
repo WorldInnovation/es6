@@ -11,6 +11,7 @@ export default class MainController {
         this.map.set('deleteDep', () => this.depController.deleteDep());
         this.map.set('editDepartment', () => this.depController.editDepartment());
         this.map.set('depSave', () => this.depController.mySave());
+        this.map.set('addDepartment', () => this.depController.editDepartment());
 
         //this.empController = new EmpController();
 

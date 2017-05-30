@@ -33,6 +33,9 @@ export default class DepService {
      data: {depID: depID},*/
     saveDepartment() {
         let id = $('#id').val();
+        if(typeof undefined == id) {
+            id = null;
+        }
         let name =  $('#name').val();
         let saveDepartment = $.ajax({
             data: {id: id, name: name},

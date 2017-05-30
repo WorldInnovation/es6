@@ -101,20 +101,4 @@ export default class DepView {
 }
 
 
-//-------------
-/*
- child.append('<input id="name" type="text" name="name" placeholder="Enter department" value=""/><br>')
- child.append('<input id="id" type="hidden" name="id"  value=""/><br>');
- child.append('<input id="butSaveDep" type="submit" value="OK">');
- //--
- const rowForm = $('<form id="depSave" onsubmit = "return false">');
- const child = $('<div></div>');
- child.append($('<input type="text" id="name" placeholder="Enter department" name ="name"/>').val(response !== null ? response.name : ""))
- append('<input id="name" type="text" name="name" placeholder="Enter department" value=""/><br>')
-child.append('<input id="id" type="hidden" name="id"  value="' + response.id + '"/><br>');
-child.append('<input id="butSaveDep" class="listener" type="submit" value="OK">');
-rowForm.append(child);
-rowForm.append('</form>');
-$('#content').append(rowForm);
- */
 
