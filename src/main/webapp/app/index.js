@@ -20,11 +20,12 @@ export default class MainController {
     }
 
     init() {
-        $("#content").on("click", ".listener", () => {
+        $("#content").on('click', '.listener', () => {
             let clickEvent = event.target.value;
             console.log(clickEvent);
             if(this.map.has(clickEvent)){
                 this.map.get(clickEvent)(event);
+                if(clickEvent == 'depSave'|| 'deleteDep')this.map.get('deps')(event);
             }
             else{
                 this.map.get('deps')(event);
