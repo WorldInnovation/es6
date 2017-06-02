@@ -52,3 +52,4 @@ export default class DepController{
     };
 
 }
+//export default new DepController;

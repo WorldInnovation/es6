@@ -21,7 +21,6 @@ export default class DepService {
     editDep() {
         let editDep = $.ajax({
             url: '/editDepartment',
-            //dataType: 'json',
             data: {depID: event.target.name},//
             type: 'get'
         });
