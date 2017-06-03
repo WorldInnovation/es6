@@ -43,4 +43,38 @@ export default class EmpView {
         body.append(table);
     };
 
+    editEmployeesForm(response){
+
+        $("#content").empty();
+        const firstParent = $('<form id="empSaveForm" method="post" action="" onsubmit = "return false"></form>');
+        var row = $('<fildset></fildset>');
+        row.append(' <legend>Employees form </legend>');
+        row.append('<p> <label for="firstName">FirstName </label>' +
+            '<input id="firstName" name="firstName" type="text"> ' +
+            '</p>');
+        row.append('<p> <label for="secondName">SecondName</label>' +
+            '<input id="secondName" name="secondName" type="text"> ' +
+            '</p>');
+        row.append('<p> <label for="grade">Gade   </label>' +
+            '<input id="grade" name="grade" type="number"> ' +
+            '</p>');
+        row.append('<p> <label for="birthday">Birthday </label>' +
+            '<input id="birthday" name="birthday" type="date"> ' +
+            '</p>');
+        row.append('<p> <label for="eMail">eMail </label>' +
+            '<input id="eMail" name="eMail" type="email"> ' +
+            '</p>');
+        row.append('<p> <input id="submit" class="submit" type="submit" value="Submit">' +
+            '</p>');
+        row.append('<input id="id" type="hidden" name="id" value=""/>' +
+            '<input id="depID" type="hidden" name="depID" value=""/>');
+
+        firstParent.append(row);
+        $('#content').append(firstParent);
+    }
+
+
+
+
+
 }

@@ -11,14 +11,16 @@ export default class DepService {
             });
         return employeesList;
     };
-/*    deleteDep() {
-        let deleteDep = $.ajax({
-            url: '/deleteDep',
+
+    deleteEmp() {
+        let deleteEmp = $.ajax({
+            url: '/deleteEmp',
             data: {depID: event.target.name},
             type: 'POST'
         });
-        return deleteDep;
+        return deleteEmp;
     };
+/*
 
     editDep() {
         let editDep = $.ajax({

@@ -19,7 +19,14 @@ export default class EmpController{
             });
     };
 
-    //----------
+    deleteEmp() {
+        let id = event.target.name;
+        this.empService.deleteEmp(id)
+            .then((response) => {
+                this.empView.displayEmployees(response);
+            });
+    };
+    //---------- editEmployeesForm
 
 }
 ///export default EmpController();
