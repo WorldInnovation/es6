@@ -9,7 +9,7 @@ export default class EmpView {
 
     }
 
-    displayEmployees(response) {
+    displayEmployees(response,depID) {
         const body = $('#content');
         body.empty();
         const table = $('<table>');
@@ -32,13 +32,13 @@ export default class EmpView {
                     .append($('<td>').text(response[i].birthday))
                     .append($('<td>').text(response[i].eMail))
 
-                    .append($('<td>').append($('<button class="listener" value="editDepartment" name="' + response[i].id + '" >Edit</button>')))
-                    .append($('<td>').append($('<button class="listener" value="deleteDep" name="' + response[i].id + '">Delete</button>')))
+                    .append($('<td>').append($('<button class="listener" value="employeeEdit" name="' + response[i].id + '" >Edit</button>')))
+                    .append($('<td>').append($('<button class="listener" value="empDelete" name="' + response[i].id + '">Delete</button>')))
             );
         }
         table.append($('<tr>')
             .append($('<td>')
-                .append($('<button class="listener" value="addEmployee" >New</button>')))
+                .append($('<button class="listener" value="addEmployee" name="' + depID + '">New</button>')))
         );
         body.append(table);
     };
@@ -47,7 +47,7 @@ export default class EmpView {
 
         $("#content").empty();
         const firstParent = $('<form id="empSaveForm" method="post" action="" onsubmit = "return false"></form>');
-        var row = $('<fildset></fildset>');
+        const row = $('<fildset></fildset>');
         row.append(' <legend>Employees form </legend>');
         row.append('<p> <label for="firstName">FirstName </label>' +
             '<input id="firstName" name="firstName" type="text"> ' +

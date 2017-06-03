@@ -22,7 +22,7 @@ export default class DepService {
         let editDep = $.ajax({
             url: '/editDepartment',
             data: {depID: event.target.name},//
-            type: 'get'
+            type: 'GET'
         });
         return editDep;
     }

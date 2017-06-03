@@ -47,7 +47,7 @@ public class EmployeesController extends ExceptionHandlingController {
 
     @RequestMapping(value = "/empDelete", method = RequestMethod.POST)
     @ResponseBody
-    public Employee empDelete(Long depID, Long empID) throws DaoExp {
+    public Employee empDelete( Long empID) throws DaoExp {
         Employee employee = null;
         if (null != empID) {
              employee = employeeService.getEmpByID(empID);

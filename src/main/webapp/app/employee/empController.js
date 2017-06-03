@@ -12,10 +12,10 @@ export default class EmpController{
         this.empService = new EmpService();
     }
     getEmpList(){
-        let id = event.target.name;
-        this.empService.getAllEmp(id)
+        let depID = event.target.name;
+        this.empService.getAllEmp(depID)
             .then( (response) => {
-                this.empView.displayEmployees(response);
+                this.empView.displayEmployees(response,depID);
             });
     };
 
@@ -26,6 +26,15 @@ export default class EmpController{
                 this.empView.displayEmployees(response);
             });
     };
+
+    editEmployee() {
+        let id = event.target.name;
+        this.empService.editEmp(this.depID, id)
+            .then((response) => {
+                this.depView.editEmployeesForm(response);
+            });
+    };
+
     //---------- editEmployeesForm
 
 }

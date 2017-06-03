@@ -1,37 +1,38 @@
-export default class DepService {
+export default class EmpService {
 
-    getAllEmp() {
-        console.log(event.target.name);
+    getAllEmp(depID) {
+        //console.log(event.target.name);
         let employeesList =
             $.ajax({
-                type: "GET",
                 url: "/employeesList",
-                data: {depID: event.target.name},
-
+                data: {depID: depID},
+                type: "GET"
             });
         return employeesList;
     };
 
-    deleteEmp() {
+    deleteEmp(id) {
         let deleteEmp = $.ajax({
             url: '/deleteEmp',
-            data: {depID: event.target.name},
+            data: {empID: id},
             type: 'POST'
         });
         return deleteEmp;
     };
-/*
 
-    editDep() {
-        let editDep = $.ajax({
-            url: '/editDepartment',
-            //dataType: 'json',
-            data: {depID: event.target.name},//
-            type: 'get'
+    editEmp(depID, id){
+        let editEmp = $.ajax({
+            url:'/employeeEdit',
+            data: {
+                depID: depID,
+                empID: id
+            },
+            type:'GET'
         });
-        return editDep;
-    }
+        return editEmp;
+    };
 
+ /*
     saveDepartment() {
         let id = $('#id').val();
         if(typeof undefined == id) {
