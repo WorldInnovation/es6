@@ -13,7 +13,7 @@ export default class EmpService {
 
     deleteEmp(id) {
         let deleteEmp = $.ajax({
-            url: '/deleteEmp',
+            url: '/empDelete',
             data: {empID: id},
             type: 'POST'
         });

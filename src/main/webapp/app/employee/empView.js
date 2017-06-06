@@ -42,8 +42,7 @@ export default class EmpView {
         );
         body.append(table);
     };
-
-    editEmployeesForm(response){
+    editEmployeesForm(){
 
         $("#content").empty();
         const firstParent = $('<form id="empSaveForm" method="post" action="" onsubmit = "return false"></form>');
