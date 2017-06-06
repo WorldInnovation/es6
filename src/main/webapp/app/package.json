@@ -9,7 +9,7 @@
   "author": "WI",
   "license": "ISC",
   "dependencies": {
-    "css-loader": "^0.28.3",
+    "css-loader": "^0.28.4",
     "html-webpack-plugin": "^2.28.0",
     "jquery": "^3.2.1",
     "jquery-validation": "^1.16.0",

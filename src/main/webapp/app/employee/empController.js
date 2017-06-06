@@ -31,7 +31,7 @@ export default class EmpController{
         let id = event.target.name;
         this.empService.editEmp(this.depID, id)
             .then((response) => {
-                this.depView.editEmployeesForm(response);
+                this.empView.editEmployeesForm(response);
             });
     };
 
