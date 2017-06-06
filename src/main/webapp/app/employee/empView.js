@@ -66,7 +66,7 @@ export default class EmpView {
             '</p>');
         row.append('<p> <input id="submit" class="submit" type="submit" value="Submit">' +
             '</p>');
-        row.append('<input id="id" type="hidden" name="id" value=""/>' +
+        row.append('<input id="id" type="hidden" name="id" value="'+ response.id+'"/>' +
             '<input id="depID" type="hidden" name="depID" value="'+ response.depID+'"/>');
 
         firstParent.append(row);

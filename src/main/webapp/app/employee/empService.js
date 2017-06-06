@@ -32,6 +32,15 @@ export default class EmpService {
         return editEmp;
     };
 
+    employeeSave() {
+        let employeeSave = $.ajax({
+            url:'/empSave',
+            data: $("#empSaveForm").serialize(),
+            type: 'POST'
+        });
+        return employeeSave;
+    };
+
  /*
     saveDepartment() {
         let id = $('#id').val();

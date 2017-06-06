@@ -35,6 +35,13 @@ export default class EmpController{
             });
     };
 
+    empSave() {
+        this.empService.employeeSave()
+            .then((response) => {
+                this.empView.displayEmployees(response);
+            });
+    }
+
     //---------- editEmployeesForm
 
 }

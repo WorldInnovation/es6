@@ -17,6 +17,7 @@ export default class MainController {
         this.map.set('employeesList', () => this.empController.getEmpList());
         this.map.set('empDelete', () => this.empController.deleteEmp());
         this.map.set('employeeEdit', () => this.empController.editEmployee());
+        this.map.set('empSave', () => this.empController.empSave());
 
         //show deps
         this.map.get('deps')(event);
@@ -35,6 +36,10 @@ export default class MainController {
             else{
                 this.map.get('deps')(event);
             }
+        });
+        $('#content').on("click", "#empSaveForm", () => {
+
+            this.map.get('empSave')(event);
         });
 
 
