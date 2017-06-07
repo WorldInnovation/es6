@@ -23,7 +23,11 @@ export default class DepController{
         this.depID = event.target.name;
         this.depService.deleteDep(this.depID)
             .then((response) => {
-                this.depView.displayDepartments(response);
+               // this.depView.displayDepartments(response);
+                this.depService.getAll()
+                    .then( (response) => {
+                        this.depView.displayDepartments(response);
+                    });
             });
     };
 
@@ -36,11 +40,13 @@ export default class DepController{
     };
 
     mySave() {
-/*        let id = $('#id').val();;
-        let name =  $('#name').val();*/
         this.depService.saveDepartment()
-            .then((response) => {
-                this.depView.displayDepartments(response);
+            .then(() => {
+               // this.depView.displayDepartments(response);
+                this.depService.getAll()
+                    .then( (response) => {
+                        this.depView.displayDepartments(response);
+                    });
             });
     };
 

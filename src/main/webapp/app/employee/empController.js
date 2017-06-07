@@ -24,20 +24,27 @@ export default class EmpController{
     deleteEmp() {
         this.id = event.target.name;
         this.empService.deleteEmp(this.id)
-            .then((response) => {
-                this.empView.displayEmployees(response);
+            .then(() => {
+                this.empService.getAllEmp(this.depID)
+                    .then( (response) => {
+                        this.empView.displayEmployees(response,this.depID);
+                    });
             });
     };
 
     editEmployee() {
         this.id = event.target.name;
-        if(event.target.value == 'addEmployee') {
+        if (event.target.value == 'addEmployee') {
             this.id = null;
+
         }
+
+
         this.empService.editEmp(this.depID, this.id)
             .then((response) => {
                 this.empView.editEmployeesForm(response);
             });
+
     };
 
     /*    addEmployee(){
@@ -50,12 +57,13 @@ export default class EmpController{
 
     empSave() {
         this.empService.employeeSave(this.depID, this.id)
-            .then((response) => {
-                this.empView.displayEmployees(response);
+            .then(() => {
+                this.empService.getAllEmp(this.depID)
+                    .then( (response) => {
+                        this.empView.displayEmployees(response,this.depID);
+                    });
             });
     }
 
-    //---------- editEmployeesForm
 
 }
-///export default EmpController();

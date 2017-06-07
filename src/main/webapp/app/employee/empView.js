@@ -73,22 +73,16 @@ export default class EmpView {
         firstParent.append(row);
         $('#content').append(firstParent);
 
-        if (response.id == null || 'undefined')
+        if ($.isNumeric(response.id ))
         {
-            $('#id').val(null);
-            /*$('#firstName').val('');
-            $('#secondName').val('');
-            $('#grade').val('');
-            $('#birthday').val('');
-            $('#eMail').val('');*/
-        }
-        else{
             $('#id').val(response.id);
             $('#firstName').val(response.firstName);
             $('#secondName').val(response.secondName);
             $('#grade').val(response.grade);
             $('#birthday').val(response.birthday);
             $('#eMail').val(response.eMail);
+        }
+        else{   $('#id').val(null);
         }
     }
 
