@@ -10,33 +10,35 @@ export default class EmpController{
     constructor(){
         this.empView = new EmpView();
         this.empService = new EmpService();
+        this.depID = null;
+        this.id = null;
     }
     getEmpList(){
-        let depID = event.target.name;
-        this.empService.getAllEmp(depID)
+        this.depID = event.target.name;
+        this.empService.getAllEmp(this.depID)
             .then( (response) => {
-                this.empView.displayEmployees(response,depID);
+                this.empView.displayEmployees(response,this.depID);
             });
     };
 
     deleteEmp() {
-        let id = event.target.name;
-        this.empService.deleteEmp(id)
+        this.id = event.target.name;
+        this.empService.deleteEmp(this.id)
             .then((response) => {
                 this.empView.displayEmployees(response);
             });
     };
 
     editEmployee() {
-        let id = event.target.name;
-        this.empService.editEmp(this.depID, id)
+        this.id = event.target.name;
+        this.empService.editEmp(this.depID, this.id)
             .then((response) => {
                 this.empView.editEmployeesForm(response);
             });
     };
 
     empSave() {
-        this.empService.employeeSave()
+        this.empService.employeeSave(this.depID, this.id)
             .then((response) => {
                 this.empView.displayEmployees(response);
             });
