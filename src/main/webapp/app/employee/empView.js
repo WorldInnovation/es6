@@ -1,5 +1,7 @@
 import jQuery from "jquery";
+import "jquery-validation";
 import "./empController";
+
 
 window.$ = window.jQuery = jQuery;
 
@@ -84,6 +86,60 @@ export default class EmpView {
         }
         else{   $('#id').val(null);
         }
+        this.validEmployee();
+    }
+
+    validEmployee(){
+        $('#empSaveForm').validate({
+            rules: {
+                firstName: {
+                    required: true,
+                    minlength: 2
+                },
+                secondName: {
+                    required: true,
+                    minlength: 2
+                },
+                grade: {
+                    required: true,
+                    number: true,
+                    max: 10
+                },
+                eMail: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                firstName: "Enter your firstname min 2 chars",
+                secondName: "Enter your secondname min 2 chars",
+                grade: "Enter a valid number",
+                eMail: "Enter correct email"
+            },
+            submitHandler: () => {
+                $.ajax({
+                    url: '/empSave',
+                    type: 'post',
+                    dataType: 'json',
+                    //data: $("#empSaveForm").serialize(),
+                    data: {
+                        depID: depID,
+                        id:id,
+                        firstName:$('#firstName').val(),
+                        secondName:$('#secondName').val(),
+                        grade:$('#grade').val(),
+                        birthday:$('#birthday').val(),
+                        eMail:$('#eMail').val()
+                    },
+                    success:  () => {
+                        alert('Employee  saved');
+                    },
+                    error:  () =>{
+                        alert('Employee not save');
+                    }
+                });
+            }
+        });
     }
 
 
