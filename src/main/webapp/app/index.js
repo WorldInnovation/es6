@@ -18,6 +18,7 @@ export default class MainController {
         this.map.set('empDelete', () => this.empController.deleteEmp());
         this.map.set('employeeEdit', () => this.empController.editEmployee());
         this.map.set('empSave', () => this.empController.empSave());
+        this.map.set('addEmployee', () => this.empController.editEmployee());
 
         //show deps
         this.map.get('deps')(event);
@@ -27,19 +28,25 @@ export default class MainController {
         $("#content").on('click', '.listener', () => {
             let clickEvent = event.target.value;
             console.log(clickEvent);
+
             if(this.map.has(clickEvent)){
                 this.map.get(clickEvent)(event);
-                if(clickEvent == 'depSave'|| 'deleteDep'){
+                /*if(clickEvent == 'depSave'|| 'deleteDep'){
                     this.map.get('deps')(event);
-                }
+                }*/
             }
             else{
                 this.map.get('deps')(event);
             }
+            event.preventDefault();
         });
         $('#content').on("click", "#empSaveForm", () => {
+            //if($(".empForm:checked").length == 0){
+             if (!$('.empForm').is(':checked')) {
+                this.map.get('empSave')(event);
+            }
+            event.preventDefault();
 
-            this.map.get('empSave')(event);
         });
 
 
