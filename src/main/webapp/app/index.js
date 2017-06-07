@@ -38,14 +38,11 @@ export default class MainController {
             else{
                 this.map.get('deps')(event);
             }
-            event.preventDefault();
+          //  event.preventDefault();
         });
-        $('#content').on("click", "#empSaveForm", () => {
-            //if($(".empForm:checked").length == 0){
-             if (!$('.empForm').is(':checked')) {
+        $('#content').on("submit", "#empSaveForm", () => {
                 this.map.get('empSave')(event);
-            }
-            event.preventDefault();
+         //   event.preventDefault();
 
         });
 
@@ -55,7 +52,10 @@ export default class MainController {
 
 }
 
-/*     //without buttons
+/*             //if($(".empForm:checked").length == 0){
+ // if (!$('.empForm').is(':checked')) {
+
+   //without buttons
 let clicker = td.elem.getAttribute('data-about');
  console.log(clicker);
 

@@ -31,11 +31,22 @@ export default class EmpController{
 
     editEmployee() {
         this.id = event.target.name;
+        if(event.target.value == 'addEmployee') {
+            this.id = null;
+        }
         this.empService.editEmp(this.depID, this.id)
             .then((response) => {
                 this.empView.editEmployeesForm(response);
             });
     };
+
+    /*    addEmployee(){
+            this.id = null;
+            this.empService.editEmp(this.depID, this.id)
+                .then((response) => {
+                    this.empView.editEmployeesForm(response);
+                });
+        };*/
 
     empSave() {
         this.empService.employeeSave(this.depID, this.id)

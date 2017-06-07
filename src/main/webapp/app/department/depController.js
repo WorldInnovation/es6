@@ -10,7 +10,7 @@ export default class DepController{
     constructor(){
         this.depView = new DepView();
         this.depService = new DepService();
-        this.id = null;
+        this.depID = null;
         this.name = null;
     }
     getAllDep(){
@@ -20,16 +20,16 @@ export default class DepController{
                 });
     };
     deleteDep() {
-        this.id = event.target.name;
-        this.depService.deleteDep(this.id)
+        this.depID = event.target.name;
+        this.depService.deleteDep(this.depID)
             .then((response) => {
                 this.depView.displayDepartments(response);
             });
     };
 
     editDepartment() {
-        this.id = event.target.name;
-        this.depService.editDep(this.id)
+        this.depID = event.target.name;
+        this.depService.editDep(this.depID)
             .then((response) => {
                 this.depView.displayDepForm(response);
             });
@@ -45,9 +45,9 @@ export default class DepController{
     };
 
     getDepName(event) {
-        this.id = $('#id').val();
+        this.depID = $('#id').val();
         this.name = $('#name').val();
-        this.depService.save(this.id, this.name)
+        this.depService.save(this.depID, this.name)
             .then((response) => {
                 this.depView.displayDepartments(response);
             });
