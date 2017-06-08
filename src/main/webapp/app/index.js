@@ -34,13 +34,6 @@ export default class MainController {
             else{
                 this.map.get('deps')(event);
             }
-
-        });
-        $('#content').on("submit", "#empSaveForm", () => {
-                this.map.get('empSave')(event);
-        });
-        $('#content').on("submit", "#departmentForm", () => {
-                this.map.get('depSave')(event);
         });
 
     }

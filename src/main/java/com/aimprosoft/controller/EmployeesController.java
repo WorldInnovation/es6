@@ -39,7 +39,7 @@ public class EmployeesController extends ExceptionHandlingController {
     @ResponseBody
     public Employee employeeEdit(Long depID, Long empID) throws DaoExp {
         Employee employee = null;
-        if (null != empID) {
+            if (null != empID) {
             employee = employeeService.getEmpByID(empID);
         }
         return employee;

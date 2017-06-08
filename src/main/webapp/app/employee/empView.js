@@ -47,26 +47,26 @@ export default class EmpView {
 
     editEmployeesForm(response){
         $("#content").empty();
-        const firstParent = $('<form id="empSaveForm" method="post" action="" onsubmit = "return false"></form>');
+        const firstParent = $('<form id="empSaveForm" method="post" action="" ></form>');
         const row = $('<fildset></fildset>');
 
         row.append(' <legend>Employees form </legend>');
         row.append('<p> <label for="firstName">FirstName </label>' +
-            '<input id="firstName" name="firstName" value="" type="text" class = "empForm"> ' +
+            '<input id="firstName" name="firstName" value="" type="text" > ' +
             '</p>');
-        row.append('<p> <label for="secondName">SecondName</label>' +
-            '<input id="secondName" name="secondName" value="" type="text" class = "empForm"> ' +
+        row.append('<p> <label for="secondName">LastName</label>' +
+            '<input id="secondName" name="secondName" value="" type="text" > ' +
             '</p>');
-        row.append('<p> <label for="grade">Gade   </label>' +
-            '<input id="grade" name="grade" value="" type="number" class = "empForm"> ' +
+        row.append('<p> <label for="grade">Grade   </label>' +
+            '<input id="grade" name="grade" value="" type="number" > ' +
             '</p>');
         row.append('<p> <label for="birthday">Birthday </label>' +
-            '<input id="birthday" name="birthday" value="" type="date" class = "empForm"> ' +
+            '<input id="birthday" name="birthday" value="" type="date" > ' +
             '</p>');
         row.append('<p> <label for="eMail">eMail </label>' +
-            '<input id="eMail" name="eMail" value="" type="email" class = "empForm"> ' +
+            '<input id="eMail" name="eMail" value="" type="email" > ' +
             '</p>');
-        row.append('<p> <input id="submit" class="submit" type="submit" value="Submit" class = "empForm">' +
+        row.append('<p> <input id="empSave" class="submit" type="submit" value="Submit" >' +
             '</p>');
         row.append('<input id="id" type="hidden" name="id" value=""/>' +
             '<input id="depID" type="hidden" name="depID" value="'+ response.depID+'"/>');
@@ -89,15 +89,26 @@ export default class EmpView {
     }
 
     validEmployee(){
+
+        $.validator.addMethod("regex",
+        function(value, element, regexp) {
+            let re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        });
+
         $('#empSaveForm').validate({
             rules: {
                 firstName: {
                     required: true,
-                    minlength: 2
+                    minlength: 2,
+                    maxlength: 10,
+                    regex: /^[A-Za-z0-9_]{2,10}$/
                 },
                 secondName: {
                     required: true,
-                    minlength: 2
+                    minlength: 2,
+                    maxlength: 10,
+                    regex: /^[A-Za-z0-9_]{2,10}$/
                 },
                 grade: {
                     required: true,
@@ -106,18 +117,33 @@ export default class EmpView {
                 },
                 eMail: {
                     required: true,
-                    email: true
+                    email: true,
+                    regex: /^[A-Za-z0-9_]+\@[A-Za-z0-9_]+\.[A-Za-z0-9_]+/
                 }
             },
             messages: {
-                firstName: "Enter your firstname min 2 chars",
-                secondName: "Enter your secondname min 2 chars",
-                grade: "Enter a valid number",
-                eMail: "Enter correct email"
+                firstName: {
+                    minlength: "Enter your firstname min 2 chars",
+                    maxlength: "Enter your firstname max 10 chars",
+                    regex: "Please enter only char"
+                },
+                secondName: {
+                    minlength: "Enter your secondname min 2 chars",
+                    maxlength: "Enter your secondname max 10 chars",
+                    regex: "Please enter only char"
+                },
+                grade: {
+                    required: "Enter a valid number from 1-10",
+                    max: "Enter a valid number from 1-10"
+                },
+                eMail: {
+                    required: "Enter correct email",
+                    regex: "Please enter a valid email"
+                }
             },
             submitHandler: () => {
                 event.target.value = 'empSave';
-                $( "#submit" ).addClass('listener').trigger( 'click' );
+                $( "#empSave" ).addClass('listener').trigger( 'click' );
 
             }
         });

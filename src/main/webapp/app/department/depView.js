@@ -41,7 +41,7 @@ export default class DepView {
         let body = $('#content');
         body.empty();
         body.append(
-            $('<form id="departmentForm" method="post" action="" onsubmit = "return false">')
+            $('<form id="departmentForm" method="post" action="" >')
                 .append(
                     $('<table>')
                         .append($('<tr>')
@@ -86,8 +86,8 @@ export default class DepView {
             messages: {
                 name: {
                     required: "Type name, please",
-                    minlength: "Your password must be at least 5 characters long",
-                    maxlength: "Your password must not be longer than 10 characters",
+                    minlength: "Name must be at least 5 characters long",
+                    maxlength: "Name must not be longer than 10 chars",
                     remote: "This name is already used!"
                 }
             },
