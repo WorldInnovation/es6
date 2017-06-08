@@ -117,27 +117,9 @@ export default class EmpView {
                 eMail: "Enter correct email"
             },
             submitHandler: () => {
-                $.ajax({
-                    url: '/empSave',
-                    type: 'post',
-                    dataType: 'json',
-                    //data: $("#empSaveForm").serialize(),
-                    data: {
-                        depID: depID,
-                        id:id,
-                        firstName:$('#firstName').val(),
-                        secondName:$('#secondName').val(),
-                        grade:$('#grade').val(),
-                        birthday:$('#birthday').val(),
-                        eMail:$('#eMail').val()
-                    },
-                    success:  () => {
-                        alert('Employee  saved');
-                    },
-                    error:  () =>{
-                        alert('Employee not save');
-                    }
-                });
+                event.target.value = 'empSave';
+                $( "#submit" ).addClass('listener').trigger( 'click' );
+
             }
         });
     }
