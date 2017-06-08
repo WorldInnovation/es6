@@ -31,36 +31,23 @@ export default class MainController {
 
             if(this.map.has(clickEvent)){
                 this.map.get(clickEvent)(event);
-                /*if(clickEvent == 'depSave'|| 'deleteDep'){
-                    this.map.get('deps')(event);
-                }*/
             }
             else{
                 this.map.get('deps')(event);
             }
-          //  event.preventDefault();
+
         });
         $('#content').on("submit", "#empSaveForm", () => {
                 this.map.get('empSave')(event);
-         //   event.preventDefault();
 
         });
-
+        $('#content').on("depSave", "#departmentForm", () => {
+                this.map.get('depSave')(event);
+        });
 
     }
 
 
 }
 
-/*             //if($(".empForm:checked").length == 0){
- // if (!$('.empForm').is(':checked')) {
-
-   //without buttons
-let clicker = td.elem.getAttribute('data-about');
- console.log(clicker);
-
- if ($(this).attr('id') === "tableSelect") changeState('empList');
- if ($(this).attr('id') === "tableEdit") this.map.get('editDepartment')(event);//editDepartment(depID);
- if ($(this).attr('id') === "tableDelete") this.map.get('delete')(event);
- */
 

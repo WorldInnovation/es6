@@ -22,8 +22,7 @@ export default class DepController{
     deleteDep() {
         this.depID = event.target.name;
         this.depService.deleteDep(this.depID)
-            .then((response) => {
-               // this.depView.displayDepartments(response);
+            .then(() => {
                 this.depService.getAll()
                     .then( (response) => {
                         this.depView.displayDepartments(response);
@@ -42,7 +41,6 @@ export default class DepController{
     mySave() {
         this.depService.saveDepartment()
             .then(() => {
-               // this.depView.displayDepartments(response);
                 this.depService.getAll()
                     .then( (response) => {
                         this.depView.displayDepartments(response);

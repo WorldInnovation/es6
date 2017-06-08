@@ -39,7 +39,6 @@ export default class EmpController{
 
         }
 
-
         this.empService.editEmp(this.depID, this.id)
             .then((response) => {
                 this.empView.editEmployeesForm(response);

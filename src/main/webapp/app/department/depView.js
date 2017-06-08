@@ -41,7 +41,7 @@ export default class DepView {
         let body = $('#content');
         body.empty();
         body.append(
-            $('<form id="departmentForm" onsubmit = "return false">')
+            $('<form id="departmentForm" method="post" action="" onsubmit = "return false">')
                 .append(
                     $('<table>')
                         .append($('<tr>')
@@ -53,7 +53,7 @@ export default class DepView {
                         )
                         .append($('<tr>')
                             .append($('<td>')
-                                .append($('<button   class="listener" value="depSave" id="depSave" >Save</button>'))
+                                .append($('<input id="depSave" class="submit" type="submit" />'))
 
                             )
                         )
@@ -91,8 +91,8 @@ export default class DepView {
                     remote: "This name is already used!"
                 }
             },
-            submitHandler: () => {
-                $( "#saveDepartment" ).addClass('listener').trigger( 'click' );
+            submitHandler: () => {event.target.value = 'depSave';
+                $( "#depSave" ).addClass('listener').trigger( 'click' );
             }
         });
     };
