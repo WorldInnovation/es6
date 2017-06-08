@@ -23,10 +23,6 @@ td {
     cursor: pointer;
 }
 
-td:hover {
-    background: #ff6600;
-}
-
 caption{
     caption-side: top;
 }
@@ -40,6 +36,18 @@ form{
 }
 
 .submit:hover{
+    background: #ff6600;
+}
+
+.button:hover{
+    background: #ff6600;
+}
+
+.listener{
+
+}
+
+.listener:hover {
     background: #ff6600;
 }
 

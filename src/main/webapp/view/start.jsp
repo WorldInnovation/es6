@@ -20,6 +20,7 @@
 </header>
 
 <main id="main">
+    <h2><a href= "/"> Home </a></h2>
     <div id="content" class="mainView"/>
 </main>
 <script type="text/javascript" version=1.7 src="/resources/dist/bundle.js"> </script>

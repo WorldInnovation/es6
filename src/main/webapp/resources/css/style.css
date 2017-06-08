@@ -23,10 +23,6 @@ td {
     cursor: pointer;
 }
 
-td:hover {
-    background: #ff6600;
-}
-
 caption{
     caption-side: top;
 }
@@ -49,6 +45,10 @@ form{
 
 .listener{
 
+}
+
+.listener:hover {
+    background: #ff6600;
 }
 
 a.btn{
