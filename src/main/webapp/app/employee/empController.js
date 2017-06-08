@@ -46,14 +46,6 @@ export default class EmpController{
 
     };
 
-    /*    addEmployee(){
-            this.id = null;
-            this.empService.editEmp(this.depID, this.id)
-                .then((response) => {
-                    this.empView.editEmployeesForm(response);
-                });
-        };*/
-
     empSave() {
         this.empService.employeeSave(this.depID, this.id)
             .then(() => {
@@ -63,6 +55,5 @@ export default class EmpController{
                     });
             });
     }
-
 
 }

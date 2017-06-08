@@ -3,7 +3,7 @@ import './style.css';
 
 import MainController from './index';
 
-$(document).ready(function () {
+$(document).ready( () =>{
     const main = new MainController();
     main.init();
 });

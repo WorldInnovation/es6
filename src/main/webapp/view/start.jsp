@@ -22,7 +22,7 @@
 <main id="main">
     <div id="content" class="mainView"/>
 </main>
-<script type="text/javascript" src="/resources/dist/bundle.js"> </script>
+<script type="text/javascript" version=1.7 src="/resources/dist/bundle.js"> </script>
 
 <footer>©copyright 2017</footer>
 </body>

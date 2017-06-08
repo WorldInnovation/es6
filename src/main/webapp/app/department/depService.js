@@ -26,10 +26,7 @@ export default class DepService {
         });
         return editDep;
     }
-    /*url: "/editDepartment",
-     type: "GET",
-     dataType: 'json',
-     data: {depID: depID},*/
+
     saveDepartment() {
         let id = $('#id').val();
         if(typeof undefined == id) {
@@ -43,16 +40,5 @@ export default class DepService {
         });
         return saveDepartment;
     };
-
-/*    depSave() {
-        let depSave = $.ajax({
-            url: '/depSave',
-            dataType: 'json',
-            data: {depID: event.target.id, name: event.target.name},
-            type: 'POST'
-        });
-        return depSave;
-    }*/
-
 
 }

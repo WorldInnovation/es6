@@ -20,7 +20,6 @@ export default class MainController {
         this.map.set('empSave', () => this.empController.empSave());
         this.map.set('addEmployee', () => this.empController.editEmployee());
 
-        //show deps
         this.map.get('deps')(event);
     }
 
@@ -39,14 +38,12 @@ export default class MainController {
         });
         $('#content').on("submit", "#empSaveForm", () => {
                 this.map.get('empSave')(event);
-
         });
-        $('#content').on("depSave", "#departmentForm", () => {
+        $('#content').on("submit", "#departmentForm", () => {
                 this.map.get('depSave')(event);
         });
 
     }
-
 
 }
 

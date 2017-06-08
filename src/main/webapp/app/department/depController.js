@@ -48,14 +48,4 @@ export default class DepController{
             });
     };
 
-    getDepName(event) {
-        this.depID = $('#id').val();
-        this.name = $('#name').val();
-        this.depService.save(this.depID, this.name)
-            .then((response) => {
-                this.depView.displayDepartments(response);
-            });
-    };
-
 }
-//export default new DepController;

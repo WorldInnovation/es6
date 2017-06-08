@@ -45,7 +45,6 @@ export default class EmpView {
         body.append(table);
     };
 
-
     editEmployeesForm(response){
         $("#content").empty();
         const firstParent = $('<form id="empSaveForm" method="post" action="" onsubmit = "return false"></form>');
@@ -123,6 +122,5 @@ export default class EmpView {
             }
         });
     }
-
 
 }
