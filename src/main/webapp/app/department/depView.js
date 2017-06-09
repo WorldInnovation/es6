@@ -31,7 +31,7 @@ export default class DepView {
         }
         table.append($('<tr>')
             .append($('<td>')
-                .append($('<button class="listener" value="addDepartment" >Add</button>')))
+                .append($('<button class="listener" value="addDepartment" >New</button>')))
         );
         body.append(table);
     };

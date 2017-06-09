@@ -5,10 +5,12 @@ body{
 
 h1, h2 {
     color: #ff6600;
+    text-align: center;
 }
 header, main, footer {
     margin: 30px auto;
     width: 600px;
+    text-align: center;
 }
 
 .my-text {
@@ -16,11 +18,15 @@ header, main, footer {
     font-size:15px
 }
 
+table {
+  /*  border: 1px solid #ff6600;*/
+    margin: auto;
+}
 td {
-    padding: 5px; /* Поля вокруг текста */
-    border: 1px solid #E4E4E4; /* Граница вокруг ячеек */
-    text-align: right;
-    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #E4E4E4;
+    text-align: center;
+    /*cursor: pointer;*/
 }
 
 caption{
@@ -35,6 +41,49 @@ form{
     font-size:17px
 }
 
+legend {
+    text-align: center;
+}
+.form-row {
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.form-row input {
+    float: right;
+    height: 19px;
+    line-height: 19px;
+    margin: 0px;
+    padding: 0px 5px;
+    width: 287px;
+    border: 1px solid #ABADB3;
+}
+
+.form-row textarea {
+    height: 90px;
+    line-height: 16px;
+    font-size: 12px;
+    padding: 0px 5px;
+    width: 404px;
+    border: 1px solid #ABADB3;
+}
+
+.form-row input[type=submit] {
+    padding:5px;
+    height:25px;
+    width:100%;
+    line-height: 10px;
+    background: #337AB7;
+    color:white;
+}
+
+.form-row input[type=submit]:hover {
+    background:#ff6600;
+}
+.reg-form {
+    width: 416px;
+    margin: 0 auto;
+}
+
 .submit:hover{
     background: #ff6600;
 }
@@ -43,9 +92,6 @@ form{
     background: #ff6600;
 }
 
-.listener{
-
-}
 
 .listener:hover {
     background: #ff6600;
@@ -63,7 +109,7 @@ a.btn{
 .btn:hover{background: rgb(80,160,80)}
 .btn:active{background: rgb(200,256,200)}
 .message{
-    color:#747474;
+    color:#cc7700;/*#747474;*/
     background-color:#E4E4E4;
     border:1px solid #323232;
     font-size:20px;

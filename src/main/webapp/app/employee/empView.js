@@ -47,27 +47,26 @@ export default class EmpView {
 
     editEmployeesForm(response){
         $("#content").empty();
-        const firstParent = $('<form id="empSaveForm" method="post" action="" ></form>');
+        const firstParent = $('<form id="empSaveForm" class="reg-form" method="post" action="" ></form>');
         const row = $('<fildset></fildset>');
 
-        row.append(' <legend>Employees form </legend>');
-        row.append('<p> <label for="firstName">FirstName </label>' +
+        row.append('<div class="form-row"> <label for="firstName">FirstName </label>' +
             '<input id="firstName" name="firstName" value="" type="text" > ' +
-            '</p>');
-        row.append('<p> <label for="secondName">LastName</label>' +
+            '</div>');
+        row.append('<div class="form-row"> <label for="secondName">LastName</label>' +
             '<input id="secondName" name="secondName" value="" type="text" > ' +
-            '</p>');
-        row.append('<p> <label for="grade">Grade   </label>' +
+            '</div>');
+        row.append('<div class="form-row"> <label for="grade">Grade   </label>' +
             '<input id="grade" name="grade" value="" type="number" > ' +
-            '</p>');
-        row.append('<p> <label for="birthday">Birthday </label>' +
+            '</div>');
+        row.append('<div class="form-row"> <label for="birthday">Birthday </label>' +
             '<input id="birthday" name="birthday" value="" type="date" > ' +
-            '</p>');
-        row.append('<p> <label for="eMail">eMail </label>' +
+            '</div>');
+        row.append('<div class="form-row"> <label for="eMail">eMail </label>' +
             '<input id="eMail" name="eMail" value="" type="email" > ' +
-            '</p>');
-        row.append('<p> <input id="empSave" class="submit" type="submit" value="Submit" >' +
-            '</p>');
+            '</div>');
+        row.append('<div class="form-row"> <input id="empSave" class="submit" type="submit" value="Submit" >' +
+            '</div>');
         row.append('<input id="id" type="hidden" name="id" value=""/>' +
             '<input id="depID" type="hidden" name="depID" value="'+ response.depID+'"/>');
 

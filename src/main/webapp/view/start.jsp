@@ -21,7 +21,14 @@
 
 <main id="main">
     <h2><a href= "/"> Home </a></h2>
-    <div id="content" class="mainView"/>
+    <div class="container">
+        <div class="row">
+            <div id="content" class="mainView"/>
+        </div>
+
+    </div>
+
+
 </main>
 <script type="text/javascript" version=1.7 src="/resources/dist/bundle.js"> </script>
 
