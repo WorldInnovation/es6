@@ -40,25 +40,16 @@ export default class DepView {
 
         let body = $('#content');
         body.empty();
-        body.append(
-            $('<form id="departmentForm" method="post" action="" >')
-                .append(
-                    $('<table>')
-                        .append($('<tr>')
-                            .append($('<td>').text('depName:'))
-                            .append($('<td>')
-                                .append($('<input type="text" id="name" placeholder="Enter department" name ="name"/>').val(response.name !== null ? response.name : ""))
-                                .append($('<input type="hidden" id="id" value="' + response.id + '"/>'))
-                            )
-                        )
-                        .append($('<tr>')
-                            .append($('<td>')
-                                .append($('<input id="depSave" class="submit" type="submit" />'))
+        const firstParent = $('<form id="departmentForm" class="reg-form" method="post" action="" ></form>');
+        const row = $('<div class="form-row"> <label for="name">DepName: </label>')
+            .append($('<input type="text" id="name" placeholder="Enter department" name ="name"/>').val(response.name !== null ? response.name : ""))
+            .append($('<input type="hidden" id="id" value="' + response.id + '"/>'))
+            .append($('</div>'))
+            .append($('<div class="form-row"> <input id="depSave" class="submit" type="submit" />'))
+            .append($('</div>'));
+        firstParent.append(row);
+        body.append(firstParent);
 
-                            )
-                        )
-                )
-        );
         this.validateDepartment()
     };
 

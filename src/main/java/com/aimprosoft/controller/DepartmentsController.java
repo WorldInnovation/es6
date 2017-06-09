@@ -44,13 +44,9 @@ public class DepartmentsController extends ExceptionHandlingController {
 
     @ResponseBody
     @RequestMapping(value = "/depSave", method = RequestMethod.POST)
-    public Department depSave(Department department) throws DaoExp {
-        try {
-            departmentService.saveOrUpdateDepartment(department);
-            return department;
-        } catch (ValidateExp exp) {
-            return null;
-        }
+    public Department depSave(Department department) throws DaoExp, ValidateExp {
+        departmentService.saveOrUpdateDepartment(department);
+        return department;
     }
 
     @ResponseBody
