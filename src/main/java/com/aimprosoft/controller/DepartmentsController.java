@@ -5,6 +5,7 @@ import com.aimprosoft.exeption.ValidateExp;
 import com.aimprosoft.model.Department;
 import com.aimprosoft.service.DepartmentService;
 import com.aimprosoft.util.FormatUtils;
+import com.aimprosoft.util.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class DepartmentsController extends ExceptionHandlingController {
@@ -44,9 +46,17 @@ public class DepartmentsController extends ExceptionHandlingController {
 
     @ResponseBody
     @RequestMapping(value = "/depSave", method = RequestMethod.POST)
-    public Department depSave(Department department) throws DaoExp, ValidateExp {
-        departmentService.saveOrUpdateDepartment(department);
-        return department;
+    public JsonObject depSave(Department department) throws DaoExp {
+        JsonObject jsonObject = new JsonObject();
+        try {
+            departmentService.saveOrUpdateDepartment(department);
+            jsonObject.setDepartment(department);
+            return jsonObject;
+        } catch (ValidateExp exp) {
+            Map<String, String> map = exp.getErrorMap();
+            jsonObject.setErrors(map);
+            return jsonObject;
+        }
     }
 
     @ResponseBody

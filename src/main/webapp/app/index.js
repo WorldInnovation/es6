@@ -1,4 +1,5 @@
 import jQuery from "jquery";
+import './style.css';
 import DepController from "./department/depController.js";
 import EmpController from "./employee/empController.js";
 window.$ = window.jQuery = jQuery;
