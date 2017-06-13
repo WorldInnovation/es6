@@ -82,7 +82,8 @@ export default class DepView {
                     remote: "This name is already used!"
                 }
             },
-            submitHandler: () => {event.target.value = 'depSave';
+            submitHandler: () => {
+                event.target.value = 'depSave';
                 $( "#depSave" ).addClass('listener').trigger( 'click' );
             }
         });

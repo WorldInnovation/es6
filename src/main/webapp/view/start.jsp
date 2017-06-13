@@ -23,12 +23,10 @@
     <h2><a href= "/"> Home </a></h2>
     <div class="container">
         <div class="row">
-            <div id="content" class="mainView"/>
+            <div id="content" class="mainView"></div>
         </div>
 
     </div>
-
-
 </main>
 <script type="text/javascript" version=1.7 src="/resources/dist/bundle.js"> </script>
 
