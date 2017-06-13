@@ -41,4 +41,11 @@ export default class MainController {
 
 }
 
+/*catch(e) {
+ let getErr = JSON.parse(e);
+ if(getErr.error[0]== "NOT_FOUND"){
+ this.map.get('deps')(event);
+ }
+}*/
+
 

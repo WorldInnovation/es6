@@ -58,7 +58,7 @@ export default class DepView {
             rules: {
                 name: {
                     required: true,
-                    minlength: 5,
+                    minlength: 1,
                     maxlength: 10,
                     remote: {
                         url: "/getDepName",

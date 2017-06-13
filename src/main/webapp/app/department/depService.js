@@ -36,9 +36,24 @@ export default class DepService {
         let saveDepartment = $.ajax({
             data: {id: id, name: name},
             url: '/depSave',
-            type: "POST"
+            type: "POST",
+            success: function(data, textStatus, jqXHR){
+                if(data.department == null){
+                    alert( "Name: "+ data.errors.name );
+                }
+            }
         });
         return saveDepartment;
     };
 
 }
+
+/*
+
+$.ajax({
+ statusCode: {
+ 404: function() {
+ alert( "page not found" );
+ }
+ }
+ });*/
