@@ -45,7 +45,17 @@ export default class DepController{
                     .then( (response) => {
                         this.depView.displayDepartments(response);
                     });
-            });
+            }).catch((res)=>{
+            if(res.responseJSON.name){
+                alert("name :" + res.responseJSON.name);
+            }else{
+                this.depService.getAll()
+                    .then( (response) => {
+                        this.depView.displayDepartments(response);
+                    });
+            }
+
+        });
     };
 
 }

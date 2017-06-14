@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class DepartmentsController extends ExceptionHandlingController {
@@ -46,17 +45,11 @@ public class DepartmentsController extends ExceptionHandlingController {
 
     @ResponseBody
     @RequestMapping(value = "/depSave", method = RequestMethod.POST)
-    public JsonObject depSave(Department department) throws DaoExp {
+    public JsonObject depSave(Department department) throws DaoExp, ValidateExp {
         JsonObject jsonObject = new JsonObject();
-        try {
-            departmentService.saveOrUpdateDepartment(department);
-            jsonObject.setDepartment(department);
-            return jsonObject;
-        } catch (ValidateExp exp) {
-            Map<String, String> map = exp.getErrorMap();
-            jsonObject.setErrors(map);
-            return jsonObject;
-        }
+        departmentService.saveOrUpdateDepartment(department);
+        jsonObject.setDepartment(department);
+        return jsonObject;
     }
 
     @ResponseBody
